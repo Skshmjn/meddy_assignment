@@ -64,7 +64,7 @@ http://0.0.0.0:8000/news?query=<query>>
 2. Create a python file to add new news source
 
 
-3. Create functions to call api
+3. Create functions to call api and prepare custom response as per our requirement
 
 
 4. Add configuration in config.py file
