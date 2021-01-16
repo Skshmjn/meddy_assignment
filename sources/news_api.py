@@ -3,12 +3,14 @@ import requests
 
 # local
 from config import NEWS_API_CONFIG
+from utils.caching import cache
 from utils.common import get_error_traceback
 from utils.logging import MyLogger
 
 logger = MyLogger()
 
 
+@cache(cache_time_in_seconds=NEWS_API_CONFIG['cache_time_out'])
 def news_api(query=None):
     try:
         # prepare request

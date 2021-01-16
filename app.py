@@ -1,5 +1,8 @@
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+
+# local
+from aggregator import aggregate_news
 
 app = FastAPI()
 
@@ -7,8 +10,11 @@ app = FastAPI()
 @app.get("/news")
 def news(query: str = None):
     if query:
-        query = query.lower().strip()
-    data = {}
+        query = query.lower()
+
+    data = aggregate_news(search_query=query)
+    if not data:
+        raise HTTPException(status_code=404, detail="Can not fetch news")
     return data
 
 

@@ -3,12 +3,14 @@ import requests
 
 # local
 from config import REDDIT_CONFIG
+from utils.caching import cache
 from utils.common import get_error_traceback
 from utils.logging import MyLogger
 
 logger = MyLogger()
 
 
+@cache(cache_time_in_seconds=REDDIT_CONFIG['cache_time_out'])
 def reddit(query=None):
     try:
         # prepare request
@@ -29,6 +31,7 @@ def reddit(query=None):
         return reddit_custom_response(response)
 
     except requests.exceptions.RequestException as e:
+        print('Redis connection failed')
         error = get_error_traceback(sys, e)
         logger.error_logger("reddit_api : %s" % error)
         return []
