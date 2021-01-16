@@ -6,7 +6,7 @@ from .redis import Redis
 redis_client = Redis()
 
 
-def cache(cache_time_in_seconds=DEFAULT_API_CACHE_TIME):
+def cache_api(cache_time_in_seconds=DEFAULT_API_CACHE_TIME):
     """
         Caching Decorator for caching third party api response
         Response is stored in redis is custom as per our requirement
