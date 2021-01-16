@@ -2,6 +2,7 @@ import datetime
 import logging
 import os
 
+# local
 from config import DIRECTORY, APP_NAME
 
 directory = DIRECTORY
