@@ -33,12 +33,14 @@ source env/bin/activate
 3. Install redis server
 
 ```
-sudo apt-get install redis
+sudo apt-get install redis-server
 ```
 
 4. Install python dependency using
 
 ```
+cd meddy_assignment
+
 ./install_python_dependencies.sh
 ```
 
@@ -51,9 +53,9 @@ python app.py
 6. Endpoints are
 
 ```
-http://0.0.0.0:8000/news/
+http://127.0.0.1:8000/news/
     
-http://0.0.0.0:8000/news?query=<query>
+http://127.0.0.1:8000/news?query=<query>
 ```
 
 ### Add more news api sources
