@@ -53,7 +53,7 @@ python app.py
 ```
 http://0.0.0.0:8000/news/
     
-http://0.0.0.0:8000/news?query=<query>>
+http://0.0.0.0:8000/news?query=<query>
 ```
 
 ### Add more news api sources
