@@ -3,8 +3,8 @@ import redis as redis
 
 # local
 from config import REDIS_URL, REDIS_PORT, REDIS_DB
-from .common import get_error_traceback
-from .logging import MyLogger
+from utils.common import get_error_traceback
+from utils.logging import MyLogger
 
 logger = MyLogger()
 
@@ -39,6 +39,7 @@ class Redis:
         try:
             redis_conn = self.redis_connection()
             redis_conn.setex(key, time_out, value)
+            return True
 
         except Exception as e:
             error = get_error_traceback(sys, e)

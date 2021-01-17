@@ -69,15 +69,15 @@ http://0.0.0.0:8000/news?query=<query>>
 
 4. Add configuration in config.py file
 
-   
+
 5. Import function in aggregator.py file and add in source list(without paranthesis)
 
-   
+
 6. Use cache_api decorator to cache your api custom response.
-   
+
 
 7. Add custom cache expiry time for your api in seconds(If no parameter given DEFAULT_API_CACHE_TIME will be used).
-   
+
 
 8. Create custom test case for your api.
 

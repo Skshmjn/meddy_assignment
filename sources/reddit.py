@@ -25,7 +25,7 @@ def reddit(query=None):
         headers = {'User-agent': 'The Awesome News Aggregator'}
 
         # create request
-        response = requests.get(url=url, params=params, headers=headers)
+        response = requests.get(url=url, params=params, headers=headers).json()
 
         # prepare response
         return reddit_custom_response(response)
@@ -38,7 +38,7 @@ def reddit(query=None):
 
 
 def reddit_custom_response(response):
-    data = response.json().get('data', {}).get('children', [])
+    data = response.get('data', {}).get('children', [])
 
     news = []
     if not data:
@@ -59,3 +59,6 @@ def reddit_custom_response(response):
         news.append(article_data)
 
     return news
+
+
+

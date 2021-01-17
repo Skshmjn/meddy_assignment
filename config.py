@@ -1,7 +1,7 @@
 import os
 
 # Logging
-DIRECTORY = os.path.join(os.path.abspath(os.getcwd()), 'log')
+DIRECTORY = os.path.join(os.path.dirname(__file__), 'log')
 APP_NAME = "NewsAgg"
 
 # Redis
@@ -29,4 +29,3 @@ NEWS_API_CONFIG = {
 }
 
 DEFAULT_API_CACHE_TIME = 60
-

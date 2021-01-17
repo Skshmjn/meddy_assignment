@@ -15,7 +15,7 @@ def cache_api(cache_time_in_seconds=DEFAULT_API_CACHE_TIME):
     def inner(func):
         def wrapper(search_arg=None, *args, **kwargs):
 
-            key = func.__name__ + search_arg if search_arg else func.__name__
+            key = func.__name__ + str(search_arg) if search_arg else func.__name__
             cached_val = redis_client.get_key_value(key)
 
             if cached_val:
